@@ -20,7 +20,7 @@ let
   libtorch-cu102-linux = fetcher "cu102" "linux";
   libtorch-cu113-linux = fetcher "cu113" "linux";
 
-  libtorch_version = "1.11.0";
+  libtorch_version = "2.3.0";
   libcxx-for-libtorch = if stdenv.hostPlatform.system == "x86_64-darwin" then libcxx else stdenv.cc.cc.lib;
   libmklml = opts: callPackage ./mklml.nix ({} // opts);
   callCpu = opts: callPackage ./generic.nix ({libcxx = libcxx-for-libtorch;} // opts);
